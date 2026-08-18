@@ -51,19 +51,69 @@
 
 
 
-function login(error,msg){
-    if(error){
-        console.log("Error is:"+error)
+// function login(error,msg){
+//     if(error){
+//         console.log("Error is:"+error)
+//     }
+//     else{
+//         console.log(msg)
+//     }
+// }
+// function loginHandler(username,password,clbk){
+//     if(username=="raj" && password=="12345"){
+//         clbk(null,"Login Success")
+//     }else{
+//         clbk("username or password is incorrect",null)
+//     }
+// }
+// loginHandler("raj","1245",login)
+
+
+// console.log("One")
+// for(i=0 ; i < 100; i++){
+//     setTimeout(() => console.log("i = " + i));
+// }
+
+// console.log("Three")
+// function run_btn(){
+//     alert("Earthquake!!!!!!")
+// }
+
+// const container = document.getElementById("container");
+// const button = document.getElementById("btn");
+
+// button.addEventListener("click",()=>{
+//     // alert("Fu*k you")
+//     container.innerHTML= "<h2 style='color:"+"red"+"'> Hey </H2>"
+
+//     const h1 = document.createElement("h1");
+//     h1.innerText="Hey this is RAIDX"
+//     container.appendChild(h1);
+// })
+const profile_image = document.createElement("img")
+profile_image.src = "./dp.jpg" 
+profile_image.height = "50px" 
+
+const information = document.createElement("information")
+information.innerHTML= "<h1 style=color:green>Raj Porwl  , 3rd year B.Tech(CSE) student.</h1><br><h2>Working on RAG,Agentic AI <br> My Tech Stack is of FastAPI, LangChain, LangGraph,QdrantDB</br> Have many live projects on Agentic AI<br></h2> "
+
+const container = document.getElementById("container")
+const loader = document.getElementById("loader")
+function show_resume(){
+    try{
+        loader.innerHTML = "<h2> Loading the data.. "
     }
-    else{
-        console.log(msg)
+    catch(e){
+        loader.innerHTML = "<h2 style=color:red> There is error in loading the data "
     }
+    finally{
+        loader.innerHTML = ""
+    }
+    container.appendChild(profile_image)
+    container.appendChild(information)
+    
+    
 }
-function loginHandler(username,password,clbk){
-    if(username=="raj" && password=="12345"){
-        clbk(null,"Login Success")
-    }else{
-        clbk("username or password is incorrect",null)
-    }
-}
-loginHandler("raj","1245",login)
+
+const btn_to_show_resume = document.getElementById("show_resume");
+btn_to_show_resume.addEventListener("click",show_resume);
