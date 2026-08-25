@@ -90,30 +90,26 @@
 //     h1.innerText="Hey this is RAIDX"
 //     container.appendChild(h1);
 // })
-const profile_image = document.createElement("img")
-profile_image.src = "./dp.jpg" 
-profile_image.height = "50px" 
+// const profile_image = document.createElement("img")
+// profile_image.src = "./dp.jpg" 
+// profile_image.height = "50px" 
 
-const information = document.createElement("information")
-information.innerHTML= "<h1 style=color:green>Raj Porwl  , 3rd year B.Tech(CSE) student.</h1><br><h2>Working on RAG,Agentic AI <br> My Tech Stack is of FastAPI, LangChain, LangGraph,QdrantDB</br> Have many live projects on Agentic AI<br></h2> "
+// const information = document.createElement("information")
+// information.innerHTML= "<h1 style=color:green>Raj Porwl  , 3rd year B.Tech(CSE) student.</h1><br><h2>Working on RAG,Agentic AI <br> My Tech Stack is of FastAPI, LangChain, LangGraph,QdrantDB</br> Have many live projects on Agentic AI<br></h2> "
 
-const container = document.getElementById("container")
-const loader = document.getElementById("loader")
-function show_resume(){
-    try{
-        loader.innerHTML = "<h2> Loading the data.. "
-    }
-    catch(e){
-        loader.innerHTML = "<h2 style=color:red> There is error in loading the data "
-    }
-    finally{
-        loader.innerHTML = ""
-    }
-    container.appendChild(profile_image)
-    container.appendChild(information)
+
+
+
+const container = document.getElementById("container");
+const image = document.createElement("img");
+image.src = "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/using_the_w3c_dom_level_1_core-doctree.jpg";
+image.setAttribute("height",200);
+image.setAttribute("width",200);
+
+function showResume(){
+
+
+        container.appendChild(image);
     
     
 }
-
-const btn_to_show_resume = document.getElementById("show_resume");
-btn_to_show_resume.addEventListener("click",show_resume);
