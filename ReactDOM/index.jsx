@@ -5,6 +5,8 @@ const h2 = React.createElement('h2',{style:{color:"red"}},"hello");
 const image1 = React.createElement('img',{src:source, style:{height:"100px",width:"100px"}})
 const text2 = React.createElement('h2',{style:{color:"greenyellow"}},"ABES ENGINEERING COLLEGE");
 
-const div_container = React.createElement('div',{style:{padding:"20px",border:"2px red solid"}},h2,text2,image1);
 
-reactRoot.render(div_container);
+const text3 = <h2> Hey my name is Raj</h2>
+const div_container = React.createElement('div',{style:{padding:"20px",border:"2px red solid"}},h2,text2,image1,text3);
+const div = <div>{div_container}</div>
+reactRoot.render(div);
