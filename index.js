@@ -106,10 +106,23 @@ image.src = "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Mo
 image.setAttribute("height",200);
 image.setAttribute("width",200);
 
-function showResume(){
+// function showResume(){
 
 
-        container.appendChild(image);
+//         container.appendChild(image);
     
     
+// }
+
+async function fetchData() {
+        try{
+                container.innerHTML = "<h2 style=color:red> Loading Data... </h2>" ;
+                const serverData = await fetch("https://fakestoreapi.com/products");
+                const jsonData = await serverData.json();
+                // console.log(jsonData[0].title);
+                container.innerText = "<h2 style=color:red> ${jsonData[0].title} </h2>" ;
+        }
+        catch{
+                        console.log("unknown error");
+        }
 }

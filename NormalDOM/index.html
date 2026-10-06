@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="showData()">Click Me</button>
+    <div id="container"></div>
+    <button id="removeChild" onclick="remove()" style="display: none;">Click to remove h2 element</button>
+    <script>
+
+        const root = document.getElementById("container");
+        const btn = document.getElementById("btn");
+        const text = document.createElement("h2");
+        const img = document.createElement("img");
+        const newDiv = document.createElement("div");
+        root.style.color = "black" ;
+
+        img.src = "https://www.abes.ac.in/assets/HomePage/About%20ABES.webp";
+        img.setAttribute("height",200);
+        img.setAttribute("width",400);
+        text.innerText = "Hello World";
+        text.style.color = "red" ;
+        text.style.backgroundColor = "black";
+        text.style.padding = "40px";
+        newDiv.innerHTML = "<h1> This is child div </h1>" ;
+        newDiv.style.border = "1px black dotted";
+        newDiv.style.padding = "10px" ;
+        
+        function showData(){
+            root.innerHTML = "<h1> This is parent div </h1>" ;
+            root.style.padding = "10px";
+            root.style.border = "2px red solid";
+            text.style.display = null ;
+            newDiv.appendChild(text);
+            newDiv.appendChild(img);
+            root.appendChild(newDiv);
+            document.getElementById("removeChild").style.display = "block" ;
+            document.getElementById("btn").style.display = "none" ;
+        }
+        function remove(){
+            try{
+                newDiv.removeChild(text);
+                document.getElementById("removeChild").style.display = "none" ;
+                document.getElementById("btn").style.display = "block" ;
+            }
+            catch(e){
+                console.log(e);
+            }
+        }
+
+    </script>
+</body>
+</html>
